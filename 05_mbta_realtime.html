@@ -20,6 +20,39 @@
 
 <script>
 
+// api token
+
+// map instance
+var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-71.104081, 42.365554],
+    zoom: 14
+});
+
+// bus data from MBTA
+async function routeData(){
+  var url  = 'https://api-v3.mbta.com/vehicles?filter[route]=1&include=trip';
+  var res  = await fetch(url);
+  var data = await res.json();
+  return data;  
+}
+
+// array of buses, signature is {id: bus.id, marker: marker}
+var buses = [];
+
+// update bus positions on map
+async function move(){
+
+  // request bus data
+
+  // loop through buses, update positions
+
+ // timer
+
+}
+move();
+
 </script>
  
 </body>
